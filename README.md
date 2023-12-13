@@ -1,3 +1,3 @@
 # Praktek Matkul Framework
 
-update 13 Desember 2023
+Updated 13 Desember 2023
