@@ -21,8 +21,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event){
             localStorage.setItem('accessToken', data.access);
             messageDiv.textContent = 'Login successful!';
             messageDiv.style.color = 'green';
-            // Redirect atau update UI setelah login sukses
-            // window.location.href = '/MateriKuliah/Framework/tes/coba.html';
+            window.location.href = '/Users/A/Downloads/DRF/framework/display/test.html'; // Redirect after success login
         }
     })
     .catch(error => {
