@@ -4,7 +4,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event){
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
     const messageDiv = document.getElementById('message');
-
+    
     fetch('http://127.0.0.1:8000/api/token/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json'},
