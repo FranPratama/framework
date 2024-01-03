@@ -5,7 +5,7 @@ document.getElementById('addItemForm').addEventListener('submit', function(event
     const descriptionItem = document.getElementById('descriptionItem').value;
     const token = localStorage.getItem('accessToken');
     
-    fetch('http://127.0.0.1:8000/api/token/', {
+    fetch('http://127.0.0.1:8000/apia/item/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
