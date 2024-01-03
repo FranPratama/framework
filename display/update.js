@@ -2,8 +2,8 @@ document.getElementById('updateItemForm').addEventListener('submit', function(ev
     event.preventDefault();
 
     const idItem = document.getElementById('upItemID').value;
-    const nameItem = document.getElementById('nameItem').value;
-    const descriptionItem = document.getElementById('descriptionItem').value;
+    const nameItem = document.getElementById('upItemName').value;
+    const descriptionItem = document.getElementById('upItemDescription').value;
     
     if(!nameItem || !descriptionItem){
         alert('Field cannot be empty!');
