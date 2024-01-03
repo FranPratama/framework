@@ -1,4 +1,4 @@
-document.getElementById('addItemForm').addEventListener('submit', function(event){
+document.getElementById('updateItemForm').addEventListener('submit', function(event){
     event.preventDefault();
 
     const idItem = document.getElementById('upItemID').value;
@@ -17,11 +17,11 @@ document.getElementById('addItemForm').addEventListener('submit', function(event
 
     const token = localStorage.getItem('accessToken');
 
-    fetch('http://127.0.0.1:8000/apia/item/', {
+    fetch(`http://127.0.0.1:8000/apia/item/${idItem}/`, {
         method: 'PUT', // dapat 'POST' tergantung API
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
+            'Authorization': `Bearer ${token}`,
         },
         body: JSON.stringify(data)
     })
@@ -37,8 +37,8 @@ document.getElementById('addItemForm').addEventListener('submit', function(event
         // fetchItems();
         window.location.reload();
     })
-    .then(updateitem => {
-        console.log('Item updated: ', updateitem);
+    .then(updateditem => {
+        console.log('Item updated: ', updateditem);
         $('#updateItemModal').modal('hide');
         window.location.reload();
     })
