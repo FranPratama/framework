@@ -11,11 +11,11 @@ function fetchItems(){
         }
     })
     .then(response => response.json())
-    .then(data=> displayitems(data))
+    .then(data=> displayitem(data))
     .catch(error => console.error('Error', error));
 }
 
-function displayitems(items){
+function displayitem(items){
     const itemsContainer = document.getElementById('items');
     items.forEach(item => {
         const itemElement = document.createElement('div');
@@ -29,5 +29,30 @@ function displayitems(items){
         </div>
         `;
         itemsContainer.appendChild(itemElement);
+    });
+
+    document.querySelectorAll('.update-btn').forEach(button => {
+        button.addEventListener('click', function(){
+            updateitem(this.getAttribute('data-id'));
+        });
+    });
+}
+
+function updateitem(id){
+    console.log("ID received at ", id);
+    const token = localStorage.getItem('accessToken');
+    fetch(`http://127.0.0.1:8000/apia/item/${id}`,{
+        Headers: {
+            'Authorization': `Bearer ${token}`
+        }
     })
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('upItemName').value = data.name;
+        document.getElementById('upItemDescription').value = data.description;
+        document.getElementById('upItemID').value = data.id;
+
+        $('#updateItemModal').modal('show');
+    })
+    .catch(error => console.error('Error: ', error));
 }
