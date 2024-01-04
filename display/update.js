@@ -17,11 +17,11 @@ document.getElementById('updateItemForm').addEventListener('submit', function(ev
 
     const token = localStorage.getItem('accessToken');
 
-    fetch(`http://127.0.0.1:8000/apia/item/${idItem}/`, {
+    fetch('http://127.0.0.1:8000/apia/item/'+idItem+"/", {
         method: 'PUT', // dapat 'POST' tergantung API
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`,
+            'Authorization': `Bearer ${token}`
         },
         body: JSON.stringify(data)
     })

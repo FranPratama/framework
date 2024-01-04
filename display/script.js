@@ -25,7 +25,7 @@ function displayitem(items){
             <div class="card-body">
                 <h5 class="card-title"> ${item.name} </h5>
                 <p class="card-text"> ${item.description} </p>
-                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#updateItemModal">Update</button>
+                <button type="button" class="btn btn-warning btn-sm update-btn" data-toggle="modal" data-target="#updateItemModal" data-id="${item.id}">Update</button>
             </div>
         </div>
         `;
@@ -40,9 +40,9 @@ function displayitem(items){
 }
 
 function updateitem(id){
-    console.log("ID received at ", id);
+    // console.log("ID received at ", id);
     const token = localStorage.getItem('accessToken');
-    fetch(`http://127.0.0.1:8000/apia/item/${id}`,{
+    fetch('http://127.0.0.1:8000/apia/item/'+id,{
         Headers: {
             'Authorization': `Bearer ${token}`
         }
@@ -53,7 +53,7 @@ function updateitem(id){
         document.getElementById('upItemDescription').value = data.description;
         document.getElementById('upItemID').value = data.id;
 
-        $('#updateItemModal').modal('show');
+        $('#updateItemModal').modal('show')
     })
     .catch(error => console.error('Error: ', error));
 }
