@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const itemsContainer = document.getElementById('items');
-    let deleteItemId = document.getElementById(deleteItemId);
+    let deleteItemId = null;
 
     itemsContainer.addEventListener('click', function(e) {
         if (e.target.classList.contains('delete-btn')) {
