@@ -21,7 +21,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event){
             localStorage.setItem('accessToken', data.access);
             messageDiv.textContent = 'Login successful!';
             messageDiv.style.color = 'green';
-            window.location.href = '/Users/UPT-01/Downloads/framework/display/test.html'; // Redirect after success login
+            window.location.href = 'C:/Users/A/Downloads/framework/display/test.html'; // Redirect after success login
         }
     })
     .catch(error => {

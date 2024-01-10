@@ -25,7 +25,8 @@ function displayitem(items){
             <div class="card-body">
                 <h5 class="card-title"> ${item.name} </h5>
                 <p class="card-text"> ${item.description} </p>
-                <button type="button" class="btn btn-warning btn-sm update-btn" data-toggle="modal" data-target="#updateItemModal" data-id="${item.id}">Update</button>
+                <button type="button" class="btn btn-warning btn-sm update-btn" data-toggle="modal" data-target="#updateItemModal" data-id="${item.id}"><span class="fas fa-edit"></span> Update</button>
+                <button type="button" class="btn btn-danger btn-sm delete-btn" data-toggle="modal" data-target="#deleteItemModal" data-id="${item.id}"><span class="fas fa-trash"></span> Delete</button>
             </div>
         </div>
         `;
