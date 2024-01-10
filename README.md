@@ -1,3 +1,4 @@
 # Framework Programming
 
-Updated 3 January 2024
+Known issues :
+> Bug at delete modal
